@@ -1,16 +1,12 @@
 # Project Nightfall
 
-<div align="center" style="width: 1550px;">
-  <img src="https://github.com/Aby-ss/Project-Nightfall/assets/103417697/23dca441-df08-499e-b2c0-58d38ae73b84" alt="Project Nightfall Banner">
+<div align="center">
+  <img src="https://github.com/Aby-ss/Project-Nightfall/assets/103417697/23dca441-df08-499e-b2c0-58d38ae73b84" alt="Project Nightfall Banner" style="margin-bottom: 200px;">
 </div>
-
-
-
-**Project Nightfall is an ambitious undertaking dedicated to advancing Gotham City's crime-fighting technology. Inspired by the iconic Dark Knight, Batman, this project aims to push the boundaries of innovation in nighttime crime prevention and detection.**
 
 ## Objective
 
-The primary objective of Project Nightfall is to engineer cutting-edge technological solutions that empower Gotham's defenders to combat crime more effectively under the cover of darkness. By harnessing the latest advancements in surveillance, communication, and tactical gear, we strive to create a safer and more secure city for its inhabitants.
+**Project Nightfall is an ambitious undertaking dedicated to advancing Gotham City's crime-fighting technology. Inspired by the iconic Dark Knight, Batman, this project aims to push the boundaries of innovation in nighttime crime prevention and detection. The primary objective of Project Nightfall is to engineer cutting-edge technological solutions that empower Gotham's defenders to combat crime more effectively under the cover of darkness. By harnessing the latest advancements in surveillance, communication, and tactical gear, we strive to create a safer and more secure city for its inhabitants.**
 
 ## Features
 
