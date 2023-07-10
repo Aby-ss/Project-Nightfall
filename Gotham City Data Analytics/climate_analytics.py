@@ -77,11 +77,14 @@ def main():
     data = get_weather_data()
     weather_data = format_weather_data(data)
 
-    for start_time, weather_code, temperature in weather_data:
+    if weather_data:
+        start_time, weather_code, temperature = weather_data[0]
         icon = get_weather_icon(weather_code)
         print(f"Date: {start_time.date()}")
         print(f"Weather: {icon}")
         print(f"Temperature: {temperature}°C")
+    else:
+        print("No weather data available for the requested location.")
 
 if __name__ == "__main__":
     main()
