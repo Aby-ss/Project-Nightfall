@@ -1,6 +1,23 @@
 import requests
 from datetime import datetime
+
 from rich import print
+from rich import box
+from rich.tree import Tree
+from rich.text import Text
+from rich.align import Align
+from rich.panel import Panel
+from rich.layout import Layout 
+from rich.table import Table
+
+from rich.live import Live
+from rich.prompt import Prompt
+from rich.progress import track
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
+
+from rich.traceback import install
+install(show_locals=True)
+
 
 API_KEY = "oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
 LOCATION = "25.2048,55.2708"
@@ -84,7 +101,7 @@ def main():
         print(f"Weather: {icon}")
         print(f"Temperature: {temperature}°C")
     else:
-        print("No weather data available for the requested location.")
+        print(Panel.fit("No weather data available for the requested location.", border_style="bold red", box = box.SQUARE))
 
 if __name__ == "__main__":
     main()
