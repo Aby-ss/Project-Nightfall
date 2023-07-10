@@ -50,7 +50,7 @@ class Footer:
         grid = Table.grid(expand=True)
         grid.add_column(justify="center", ratio=1)
         grid.add_row("[i]It's not who i am underneath, but what i do that defines me. - The Dark Knight[/]")
-        return Panel(grid, style="blue on black")
+        return Panel(grid, style="white on black")
     
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
