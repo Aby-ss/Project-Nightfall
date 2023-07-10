@@ -40,7 +40,7 @@ class Header:
         grid.add_column(justify="center", ratio=1)
         grid.add_column(justify="right")
         grid.add_row(
-            "👔", "[b]ConnectWave[/]", datetime.now().ctime().replace(":", "[blink]:[/]"),
+            "👔", "[b]Main Systems[/] - [i]Project: Nightfall[/]", datetime.now().ctime().replace(":", "[blink]:[/]"),
         )
         return Panel(grid, style="bold white")
     
@@ -52,7 +52,7 @@ class Footer:
         grid.add_column(justify="center", ratio=1)
         grid.add_column(justify="right")
         grid.add_row(
-            "💻", "[b]Simplifying Collaboration. Empowering Success.[/]", "📊")
+            "💻", "[i]It's not who i am underneath, but what i do that defines me. - The Dark Knight[/]", "🗡")
         return Panel(grid, style="blue on black")
     
 layout["Header"].update(Header())
