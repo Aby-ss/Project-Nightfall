@@ -20,10 +20,10 @@ install(show_locals=True)
 
 
 API_KEY = "oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
-LOCATION = "25.2048,55.2708"
+LOCATION = "40.712776,-74.005974"
 
 def get_weather_data():
-    url = f"https://api.tomorrow.io/v4/timelines?location={LOCATION}&fields=temperature_2m,weatherCode&units=metric&timesteps=1d&apikey={API_KEY}"
+    url = f"https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=1d&units=metric&apikey={API_KEY}'"
     response = requests.get(url)
     data = response.json()
     return data
