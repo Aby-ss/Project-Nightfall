@@ -3,7 +3,8 @@ from datetime import datetime
 from rich import print
 
 API_KEY = "oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
-LOCATION = "Dubai"
+LOCATION = "25.2048,55.2708"
+
 
 def get_weather_data():
     url = f"https://api.tomorrow.io/v4/timelines?location={LOCATION}&fields=temperature_2m,weatherCode&units=metric&timesteps=1d&apikey={API_KEY}"
@@ -14,13 +15,17 @@ def get_weather_data():
 def format_weather_data(data):
     weather_data = []
     timelines = data.get("data", {}).get("timelines", [])
-    for timeline in timelines:
-        interval = timeline.get("intervals", [])[0]
-        start_time = datetime.fromisoformat(interval.get("startTime"))
-        weather_code = interval.get("values", {}).get("weatherCode")
-        temperature = interval.get("values", {}).get("temperature_2m")
-        weather_data.append((start_time, weather_code, temperature))
+    if timelines:
+        timeline = timelines[0]
+        intervals = timeline.get("intervals", [])
+        if intervals:
+            interval = intervals[0]
+            start_time = datetime.fromisoformat(interval.get("startTime"))
+            weather_code = interval.get("values", {}).get("weatherCode")
+            temperature = interval.get("values", {}).get("temperature_2m")
+            weather_data.append((start_time, weather_code, temperature))
     return weather_data
+
 
 def get_weather_icon(weather_code):
     if weather_code == 1000:  # Clear
@@ -74,6 +79,9 @@ def main():
 
     for start_time, weather_code, temperature in weather_data:
         icon = get_weather_icon(weather_code)
-        print(f"{start_time.date()}: {icon}  {temperature}°C")
+        print(f"Date: {start_time.date()}")
+        print(f"Weather: {icon}")
+        print(f"Temperature: {temperature}°C")
 
-main()
+if __name__ == "__main__":
+    main()
