@@ -20,7 +20,7 @@ install(show_locals=True)
 
 
 API_KEY = "oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
-LOCATION = "25.2048,55.2708"
+LOCATION = "40.75872069597532,-73.98529171943665"
 
 
 def get_weather_data():
