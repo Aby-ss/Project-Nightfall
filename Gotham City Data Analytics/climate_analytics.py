@@ -20,14 +20,14 @@ install(show_locals=True)
 
 
 API_KEY = "oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
-LOCATION = "40.75872069597532,-73.98529171943665"
-
+LOCATION = "25.2048,55.2708"
 
 def get_weather_data():
     url = f"https://api.tomorrow.io/v4/timelines?location={LOCATION}&fields=temperature_2m,weatherCode&units=metric&timesteps=1d&apikey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return data
+
 
 def format_weather_data(data):
     weather_data = []
@@ -90,6 +90,7 @@ def get_weather_icon(weather_code):
     else:
         return "❓"
 
+
 def main():
     data = get_weather_data()
     weather_data = format_weather_data(data)
@@ -101,7 +102,14 @@ def main():
         print(f"Weather: {icon}")
         print(f"Temperature: {temperature}°C")
     else:
-        print(Panel.fit("No weather data available for the requested location.", border_style="bold red", box = box.SQUARE))
+        print(
+            Panel.fit(
+                "No weather data available for the requested location.",
+                border_style="bold red",
+                box=box.SQUARE,
+            )
+        )
+
 
 if __name__ == "__main__":
     main()
