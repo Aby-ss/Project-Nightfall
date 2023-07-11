@@ -1,8 +1,29 @@
+from datetime import datetime
+import csv
+import time
+from time import sleep
+import math
+import keyboard
+import numpy as np
+import asciichartpy
 import requests
+
 from rich import print
+from rich import box
+from rich.tree import Tree
+from rich.text import Text
+from rich.align import Align
+from rich.panel import Panel
+from rich.layout import Layout 
+from rich.table import Table
+
+from rich.live import Live
+from rich.prompt import Prompt
+from rich.progress import track
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 
 from rich.traceback import install
-install(show_locals=True    )
+install(show_locals=True)
 
 def get_bls_data(series_id, start_year, end_year, api_key):
     url = f'https://api.bls.gov/publicAPI/v2/timeseries/data/{series_id}'
@@ -46,5 +67,5 @@ for series_id in series_ids:
         for data_point in bls_data:
             period = data_point['periodName']
             value = data_point['value']
-            print(f'{period}: {value}')
+            print(Panel(f'{period}: {value}'))
         print()
