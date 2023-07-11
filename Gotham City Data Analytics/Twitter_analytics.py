@@ -2,9 +2,9 @@ import tweepy
 from rich import print
 
 # Twitter API credentials
-API_KEY = "KyVxH3BXdMUyDtDlo1nsg8yUW"
-API_SECRET = "4WVzMaUzQ5IvBccQDGI2MhOaXAuNQmX32Cgnu0qlbY4ruZsInT"
-ACCESS_TOKEN = "1674187667553284097-cvsQ9rLVkIo0j88Csu04rgJ2L5PCZR"
+API_KEY = "8biEytoyZzYW9Pcytm5TThQF7"
+API_SECRET = "HDX6HQ5fDkHvMwNShsanfOCVcYa7cRhr23tBzgZ46n1dQMrEVr"
+ACCESS_TOKEN = "1674187667553284097-pSD6kNKthu3h5YBbFizPhFUiqEop94"
 ACCESS_TOKEN_SECRET = "IzJQwOcQHLLQ3cc6Lxn9tjrpTiBETUFWazSKg8y8Mtf3o"
 
 # Authenticate with Twitter
