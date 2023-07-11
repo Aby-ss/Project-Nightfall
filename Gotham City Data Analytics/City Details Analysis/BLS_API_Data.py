@@ -64,8 +64,7 @@ for series_id, series_name in zip(series_ids, series_names):
 
     bls_data = get_bls_data(series_id, 2022, 2022, api_key)
     if bls_data:
-        for data_point in bls_data:
-            period = data_point['periodName']
-            value = data_point['value']
-            print(f"{period}: {value}")
+        values = [f"{data_point['periodName']}: {data_point['value']}" for data_point in bls_data]
+        panel = Panel.fit("\n".join(values), title=f'{series_id}-{series_name}', title_align="left", border_style="bold white", box = box.SQUARE)
+        print(panel)
         print()
