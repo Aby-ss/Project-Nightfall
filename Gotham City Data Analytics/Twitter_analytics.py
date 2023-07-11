@@ -2,10 +2,10 @@ import tweepy
 from rich import print
 
 # Twitter API credentials
-API_KEY = "YOUR_API_KEY"
-API_SECRET = "YOUR_API_SECRET"
-ACCESS_TOKEN = "YOUR_ACCESS_TOKEN"
-ACCESS_TOKEN_SECRET = "YOUR_ACCESS_TOKEN_SECRET"
+API_KEY = "KyVxH3BXdMUyDtDlo1nsg8yUW"
+API_SECRET = "4WVzMaUzQ5IvBccQDGI2MhOaXAuNQmX32Cgnu0qlbY4ruZsInT"
+ACCESS_TOKEN = "1674187667553284097-cvsQ9rLVkIo0j88Csu04rgJ2L5PCZR"
+ACCESS_TOKEN_SECRET = "IzJQwOcQHLLQ3cc6Lxn9tjrpTiBETUFWazSKg8y8Mtf3o"
 
 # Authenticate with Twitter
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
@@ -13,12 +13,8 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 def search_tweets(query, count=10):
-    tweets = []
-    try:
-        # Retrieve tweets matching the query
-        tweets = api.search(q=query, count=count, lang="en", tweet_mode="extended")
-    except tweepy.TweepError as e:
-        print(f"[bold red]Error:[/bold red] {str(e)}")
+    # Retrieve tweets matching the query
+    tweets = api.search_tweets(q=query, lang="en", tweet_mode="extended", count=count)
     return tweets
 
 def analyze_sentiment(tweet):
