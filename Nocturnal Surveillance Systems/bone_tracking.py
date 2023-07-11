@@ -1,6 +1,10 @@
 import cv2
 import mediapipe as mp
 
+from rich.traceback import install
+install(show_locals=True)
+
+
 # initialize Pose estimator
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
