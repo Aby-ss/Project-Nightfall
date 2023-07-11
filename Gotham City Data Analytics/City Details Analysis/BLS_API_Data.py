@@ -1,6 +1,5 @@
 import requests
 from rich import print
-from rich.panel import Panel
 
 from rich.traceback import install
 install(show_locals=True    )
@@ -24,18 +23,6 @@ def get_bls_data(series_id, start_year, end_year, api_key):
         print('Failed to fetch BLS data.')
         return None
 
-def format_bls_data(series_data):
-    rows = []
-    for data_point in series_data:
-        year = data_point['year']
-        period = data_point['period']
-        value = data_point['value']
-        footnotes = data_point['footnotes'][0]['text']
-        rows.append(f'{year}-{period}: {value} ({footnotes})')
-    
-    panel = Panel.fit(rows, title='BLS Data')
-    return panel
-
 # Replace with your BLS API key
 api_key = '5688c521d1d54d98a2392ed6601bf137'
 
@@ -46,5 +33,8 @@ end_year = 2022
 
 bls_data = get_bls_data(series_id, start_year, end_year, api_key)
 if bls_data:
-    formatted_data = format_bls_data(bls_data)
-    print(formatted_data)
+    for data_point in bls_data:
+        year = data_point['year']
+        period = data_point['periodName']
+        value = data_point['value']
+        print(f'{year} {period}: {value}')
