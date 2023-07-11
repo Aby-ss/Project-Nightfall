@@ -37,7 +37,7 @@ def format_bls_data(series_data):
     return panel
 
 # Replace with your BLS API key
-api_key = 'YOUR_API_KEY'
+api_key = '5688c521d1d54d98a2392ed6601bf137'
 
 # Example usage
 series_id = 'CUUR0000SA0'  # Consumer Price Index for All Urban Consumers, All Items
