@@ -1,6 +1,9 @@
 import tweepy
 from rich import print
 
+from rich.traceback import install
+install(show_locals=True)
+
 # Twitter API credentials
 API_KEY = "8biEytoyZzYW9Pcytm5TThQF7"
 API_SECRET = "HDX6HQ5fDkHvMwNShsanfOCVcYa7cRhr23tBzgZ46n1dQMrEVr"
