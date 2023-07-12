@@ -26,7 +26,7 @@ from rich.traceback import install
 install(show_locals=True)
 
 
-city = 'london'
+city = 'Dubai'
 api_url = 'https://api.api-ninjas.com/v1/airquality?city={}'.format(city)
 response = requests.get(api_url, headers={'X-Api-Key': 'E9SmCxTQQtyVD79D96wfpg==7Z30WK1D8Do2AOcN'})
 
