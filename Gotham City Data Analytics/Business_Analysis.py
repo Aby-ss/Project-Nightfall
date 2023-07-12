@@ -2,7 +2,7 @@ import requests
 import json
 
 # Define your Yelp Fusion API credentials
-api_key = 'YOUR_API_KEY'
+api_key = 'p_uIld410DVuEtZnaciXDeOL9itRU-yn2C3Z2bCGRZ2ptAJ6Yc8IcySXJLuY3_j8HVQ0APDrxg6c4w7TtTj7Xb7LgT7FFEPskULbTYYR7J3yhzKd2aQuF2TDDqOuZHYx'
 
 # API endpoint for business search
 url = 'https://api.yelp.com/v3/businesses/search'
