@@ -1,7 +1,7 @@
 import requests
 
 # Replace 'YOUR_API_KEY' with your actual API key from NewsAPI
-api_key = 'YOUR_API_KEY'
+api_key = 'd88f50af7b21490889c52621330e9a2c'
 
 # Specify the endpoint and parameters
 url = 'https://newsapi.org/v2/everything'
