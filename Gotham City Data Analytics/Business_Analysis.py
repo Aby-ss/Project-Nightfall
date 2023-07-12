@@ -54,7 +54,4 @@ for business in businesses:
     rating = business['rating']
     address = ', '.join(business['location']['display_address'])
     
-    print(f"Name: {name}")
-    print(f"Rating: {rating}")
-    print(f"Address: {address}")
-    print('---')
+    print(Panel(f"{name}\nBusiness Type: Restaurant\nRating: {rating}\nAddress: {address}", title=f"{name}", title_align="left", border_style="bold white", box = box.SQUARE))
