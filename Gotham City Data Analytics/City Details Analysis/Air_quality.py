@@ -60,5 +60,7 @@ if response.status_code == requests.codes.ok:
     print("O3_aqi:", O3_aqi)
     print("NO2_concentration:", NO2_concentration)
     print("NO2_aqi:", NO2_aqi)
+    
+    print(Panel(f"Overall Air Quality Index [aqi]: {overall_aqi}\n\n[b]C0 Concentration[/]: {CO_concentration}  [b]C0 AQI[/]: {CO_aqi}\n[b]PM10 Concentration[/]: {PM10_concentration}  [b]PM10 AQI[/]: {PM10_aqi}\n[b]SO2 Concentration[/]: {SO2_concentration}   [b]SO2 AQI[/]: {SO2_aqi}\n[b]PM25 Concentration[/]: {PM25_concentration}  [b]PM25 AQI[/]: {PM25_aqi}\n[b]O3 Concentration[/]: {O3_concentration}  [b]O3 AQI[/]: {O3_aqi}\n[b]NO2 Concentration[/]: {NO2_concentration}  [b]NO2 AQI[/]: {NO2_aqi}", title=f"Air Quality Index for [i]{city}[/]", title_align="left", border_style="bold white", box = box.SQUARE))
 else:
     print("Error:", response.status_code, response.text)
