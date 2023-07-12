@@ -31,7 +31,7 @@ api_key = 'd88f50af7b21490889c52621330e9a2c'
 # Specify the endpoint and parameters
 url = 'https://newsapi.org/v2/everything'
 params = {
-    'q': 'city',  # Replace 'city' with the desired city or region
+    'q': 'Dubai',  # Replace 'city' with the desired city or region
     'apiKey': api_key
 }
 
@@ -48,11 +48,7 @@ if response.status_code == 200:
         title = article['title']
         description = article['description']
         source = article['source']['name']
-        print(f"Title: {title}")
-        print(f"Description: {description}")
-        print(f"Source: {source}")
-        print("---")
         
-        print(Panel())
+        print(Panel(f"{description}", title=f"{title}", subtitle=f"{source}", title_align="left", subtitle_align="left", border_style="bold white", box = box.SQUARE))
 else:
     print(f"Error: {response.status_code}")
