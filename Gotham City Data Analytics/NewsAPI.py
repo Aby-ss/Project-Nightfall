@@ -32,7 +32,8 @@ api_key = 'd88f50af7b21490889c52621330e9a2c'
 url = 'https://newsapi.org/v2/everything'
 params = {
     'q': 'Dubai',  # Replace 'city' with the desired city or region
-    'apiKey': api_key
+    'apiKey': api_key,
+    'pageSize': 10  # Specify the number of articles you want to retrieve
 }
 
 # Send the request to the API
