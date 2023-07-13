@@ -47,4 +47,4 @@ if response.status_code == requests.codes.ok:
     else:
         print("No data available for the specified city.")
 else:
-    print("Error:", response.status_code, response.text)
+    print(Panel.fit(f"[b]Error: {response.status_code}: {response.text}", border_style="bold red", box = box.SQUARE))
