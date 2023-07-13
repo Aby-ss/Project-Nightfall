@@ -1,5 +1,10 @@
 import socket
 import threading
+from rich import box
+from rich.panel import Panel
+
+from rich.traceback import install
+install(show_locals=True)
 
 # Server configuration
 HOST = '127.0.0.1'  # The server's hostname or IP address
@@ -19,7 +24,7 @@ def handle_client(client_socket, client_address):
 
             # Check if server is being closed
             if message == 'q':
-                print('Server is shutting down...')
+                print(Panel('Server is shutting down...'))
                 running = False
                 break
 
