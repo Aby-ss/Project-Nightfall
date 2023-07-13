@@ -37,8 +37,7 @@ if response.status_code == requests.codes.ok:
         day = event['day']
         event_desc = event['event']
 
-        print(f"Date: {year}-{month}-{day}")
-        print(f"Event: {event_desc}")
-        print()
+
+        print(Panel(f"{event_desc}", title=f"{year} - {month} - {day}", title_align="left", border_style="bold white", box = box.SQUARE))
 else:
     print("Error:", response.status_code, response.text)
