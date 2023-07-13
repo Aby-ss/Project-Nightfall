@@ -38,5 +38,7 @@ if response.status_code == requests.codes.ok:
 
         print("Name:", name)
         print("Country:", country)
+        
+        print(Panel.fit(f"[b]Country[/]: {country}    [b]Name[/]: {name}", border_style="bold white", box = box.SQUARE))
 else:
     print("Error:", response.status_code, response.text)
