@@ -24,7 +24,7 @@ def handle_client(client_socket, client_address):
 
             # Check if server is being closed
             if message == 'q':
-                print(Panel('Server is shutting down...'))
+                print(Panel('Server is shutting down...', border_style="bold red", box=box.SQUARE))
                 running = False
                 break
 
@@ -44,7 +44,7 @@ def start_server():
     server_socket.bind((HOST, PORT))
     server_socket.listen()
 
-    print('Server started. Waiting for connections...')
+    print(Panel('Server started. Waiting for connections...', border_style="bold green", box=box.SQUARE))
 
     while running:
         # Accept client connection
