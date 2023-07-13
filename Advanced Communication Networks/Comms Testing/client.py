@@ -1,5 +1,6 @@
 import socket
 import threading
+from rich import box
 from rich.console import Console
 from rich.panel import Panel
 
@@ -20,7 +21,7 @@ def receive_messages(client_socket):
 
             # Check if server is closing
             if message == 'q':
-                print('Server has closed. Exiting...')
+                print(Panel('Server has closed. Exiting...', border_style="bold red", box=box.SQUARE))
                 running = False
                 break
 
@@ -30,7 +31,7 @@ def receive_messages(client_socket):
 
             # Check if message is "bye" to exit client script
             if message.lower() == 'bye':
-                print('Server has closed. Exiting...')
+                print(Panel('Server has closed. Exiting...', border_style="bold red", box=box.SQUARE))
                 running = False
                 break
         except:
@@ -57,7 +58,7 @@ def start_client():
         # Check if user wants to exit
         if message.lower() == 'bye':
             client_socket.send(message.encode('utf-8'))
-            print('Exiting...')
+            print(Panel('Exiting...', border_style="bold red", box=box.SQUARE))
             running = False
             break
 
