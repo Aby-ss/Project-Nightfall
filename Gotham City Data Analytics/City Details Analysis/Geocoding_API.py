@@ -25,7 +25,7 @@ from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.traceback import install
 install(show_locals=True)
 
-city = 'london'
+city = 'Dubai'
 api_url = 'https://api.api-ninjas.com/v1/geocoding?city={}'.format(city)
 response = requests.get(api_url, headers={'X-Api-Key': 'E9SmCxTQQtyVD79D96wfpg==7Z30WK1D8Do2AOcN'})
 
@@ -42,6 +42,8 @@ if response.status_code == requests.codes.ok:
         print("Latitude:", latitude)
         print("Longitude:", longitude)
         print("Country:", country)
+        
+        print(Panel.fit(f"Latitude: {latitude}   Longitude: {longitude}\nCountry: {country}", title=f"{name}", title_align="left", border_style="bold white", box = box.SQUARE))
     else:
         print("No data available for the specified city.")
 else:
