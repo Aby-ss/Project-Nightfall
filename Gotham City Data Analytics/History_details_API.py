@@ -40,4 +40,4 @@ if response.status_code == requests.codes.ok:
 
         print(Panel(f"{event_desc}", title=f"{year} - {month} - {day}", title_align="left", border_style="bold white", box = box.SQUARE))
 else:
-    print("Error:", response.status_code, response.text)
+    print(Panel.fit(f"[b]Error: {response.status_code}: {response.text}", border_style="bold red", box = box.SQUARE))
