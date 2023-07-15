@@ -1,42 +1,42 @@
 import cv2
 import mediapipe as mp
 
-from rich.traceback import install
-install(show_locals=True)
+def track_pose():
+    # Initialize VideoCapture
+    cap = cv2.VideoCapture(0)
 
+    # Initialize Mediapipe solutions
+    mp_pose = mp.solutions.pose
+    pose = mp_pose.Pose()
 
-# initialize Pose estimator
-mp_drawing = mp.solutions.drawing_utils
-mp_pose = mp.solutions.pose
+    while True:
+        # Read frame from video capture
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-pose = mp_pose.Pose(
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.5)
+        # Convert the image to RGB
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-# create capture object
-cap = cv2.VideoCapture('video.mp4')
+        # Process the image and get pose landmarks
+        results = pose.process(rgb_frame)
+        landmarks = results.pose_landmarks
 
-while cap.isOpened():
-    # read frame from capture object
-    _, frame = cap.read()
+        # Display the landmarks on the frame
+        if landmarks:
+            mp.solutions.drawing_utils.draw_landmarks(
+                frame, landmarks, mp_pose.POSE_CONNECTIONS)
 
-    try:
-        # convert the frame to RGB format
-        RGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # Show the frame
+        cv2.imshow('Pose Tracking', frame)
 
-        # process the RGB frame to get the result
-        results = pose.process(RGB)
+        # Exit on 'q' keypress
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
-        print(results.pose_landmarks)
-        # draw detected skeleton on the frame
-        mp_drawing.draw_landmarks(
-            frame, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
+    # Release the VideoCapture and close windows
+    cap.release()
+    cv2.destroyAllWindows()
 
-        # show the final output
-        cv2.imshow('Output', frame)
-    except:
-        break
-    if cv2.waitKey(1) == ord('q'):
-        break
-cap.release()
-cv2.destroyAllWindows()
+# Run the pose tracking function
+track_pose()
