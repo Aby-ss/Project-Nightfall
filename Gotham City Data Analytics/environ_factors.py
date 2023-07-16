@@ -17,10 +17,11 @@ def get_air_quality_data(location):
         
         if results:
             measurement = results[0]
-            print("Air quality data for", location)
-            print("Parameter:", measurement['parameter'])
-            print("Value:", measurement['value'], measurement['unit'])
-            print("Date:", measurement['date']['utc'])
+            Location_of_search = location
+            Parameter = measurement['parameter']
+            Value = measurement['value'], measurement['unit']
+            Date = measurement['date']['utc']
+        
         else:
             print("No air quality data found for", location)
     else:
