@@ -114,4 +114,4 @@ wind_speed_max = first_timeframe["values"]["windSpeedMax"]
 wind_speed_min = first_timeframe["values"]["windSpeedMin"]
 
 predicted_weather = Panel.fit(f" Cloud Base Avg: {cloud_base_avg}\n Cloud Ceiling Avg: {cloud_ceiling_avg}\n Cloud Cover Avg: {cloud_cover_avg}\n Dew Point Avg: {dew_point_avg}\n Evapotranspiration Avg: {evapotranspiration_avg}\n Humidity Avg: {humidity_avg}\n Precipitation Probability Avg: {precipitation_probability_avg}\n Rain Accumulation Avg: {rain_accumulation_avg}\n Rain Intensity Avg: {rain_intensity_avg}\n Snow Accumation: {snow_accumulation_avg}\n Sleet Accumulation Avg: {sleet_accumulation_avg}\n UV Index Avg: {uv_index_avg}\n Visibility Avg: {visibility_avg}\n Wind Gust Avg: {wind_gust_avg}\n Wind Speed Avg: {wind_speed_avg}", title="Predicted Weather", title_align="left", border_style="bold green", box = box.SQUARE)
-print(predicted_weather)
+print(predicted_weather) # Printable in other file imports
