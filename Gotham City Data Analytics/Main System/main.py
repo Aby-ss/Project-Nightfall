@@ -32,6 +32,21 @@ layout.split_column(
     Layout(name = "Footer", size=3)
 )
 
+layout["Body"].split_row(
+    Layout(name="Right"), # Use Right side for Weather Analytics and News
+    Layout(name="Left")
+)
+
+layout["Right"].split_column(
+    Layout(name="Weather"),
+    Layout(name="News")
+)
+
+layout["Weather"].split_row(
+    Layout(name="Weather Forecast"),
+    Layout(name="Environmental Factors")
+)
+
 class Header:
 
     def __rich__(self) -> Panel:
@@ -40,7 +55,7 @@ class Header:
         grid.add_column(justify="center", ratio=1)
         grid.add_column(justify="right")
         grid.add_row(
-            "🕶", "[b]Main Systems[/] - [i]Project: Nightfall[/]", datetime.now().ctime().replace(":", "[blink]:[/]"),
+            "🗃", "[b]Main Systems[/]-[i]Project: Nightfall[/]", datetime.now().ctime().replace(":", "[blink]:[/]"),
         )
         return Panel(grid, style="bold white")
     
