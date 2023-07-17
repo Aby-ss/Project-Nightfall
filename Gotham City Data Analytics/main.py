@@ -67,7 +67,12 @@ class Footer:
         grid.add_row("[i]It's not who i am underneath, but what i do that defines me. - The Dark Knight[/]")
         return Panel(grid, style="white on black")
     
+def climate_analysis():
+    import climate_analytics as Climate_analysis
+    return Climate_analysis.predicted_weather
+    
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
+layout["Weather Forecast"].update(climate_analysis())
 
 print(layout)
