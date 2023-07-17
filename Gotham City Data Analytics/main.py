@@ -43,12 +43,12 @@ layout["Right"].split_column(
 )
 
 layout["Left"].split_column(
-    Layout(name="Others"),
+    Layout(name="Others", size=15),
     Layout(name="History Details")
 )
 
 layout["Others"].split_row(
-    Layout(name="Air Quality", ratio=2),
+    Layout(name="Air Quality"),
     Layout(name="Overall Country")
 )
 
