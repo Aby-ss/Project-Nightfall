@@ -88,6 +88,10 @@ def enviromental_factors():
 def air_Quality():
     import Air_quality as AQ
     return AQ.air_quality
+
+def overall_country():
+    import overall_country as Country
+    return Country.country_panel
     
     
 layout["Header"].update(Header())
@@ -95,5 +99,6 @@ layout["Footer"].update(Footer())
 layout["Weather Forecast"].update(climate_analysis())
 layout["Environmental Factors"].update(enviromental_factors())
 layout["Air Quality"].update(air_Quality())
+layout["Overall Country"].update(overall_country())
 
 print(layout)
