@@ -38,8 +38,18 @@ layout["Body"].split_row(
 )
 
 layout["Right"].split_column(
-    Layout(name="Weather"),
+    Layout(name="Weather", size=17),
     Layout(name="News")
+)
+
+layout["Left"].split_column(
+    Layout(name="Others"),
+    Layout(name="History Details")
+)
+
+layout["Others"].split_row(
+    Layout(name="Air Quality"),
+    Layout(name="Overall Country")
 )
 
 layout["Weather"].split_row(
@@ -70,9 +80,14 @@ class Footer:
 def climate_analysis():
     import climate_analytics as Climate_analysis
     return Climate_analysis.predicted_weather
+
+def enviromental_factors():
+    import environ_factors as EV_factors
+    return EV_factors.get_air_quality_data("London")
     
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 layout["Weather Forecast"].update(climate_analysis())
+layout["Environmental Factors"].update(enviromental_factors())
 
 print(layout)

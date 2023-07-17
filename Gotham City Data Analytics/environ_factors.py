@@ -47,8 +47,8 @@ def get_air_quality_data(location):
             Value = measurement['value'], measurement['unit']
             Date = measurement['date']['utc']
 
-            environmental_factors = Panel.fit(f"[b]Location:[/] {Location_of_search}\n[b]Parameter:[/] {parameters}\n[b]Value:[/] {Value}\n[b]Measurement:[/] {Value}\n[b]Date:[/] {Date}")
-            print(environmental_factors)
+            environmental_factors = Panel.fit(f"[b]Location:[/] {Location_of_search}\n[b]Parameter:[/] {parameters}\n[b]Value:[/] {Value}\n[b]Measurement:[/] {Value}\n[b]Date:[/] {Date}", title=f"{Location_of_search}", border_style="bold white", box = box.SQUARE)
+            return environmental_factors
         else:
             print(Panel.fit(f"No air quality data found for {location}", border_style="bold red"))
     else:
