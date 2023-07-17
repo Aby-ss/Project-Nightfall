@@ -20,8 +20,16 @@ if response.status_code == requests.codes.ok:
     gdp = response.json()[0]["gdp"]
     gdp_growth = response.json()[0]["gdp_growth"]
     capital = response.json()[0]["capital"]
+    surface_area = response.json()[0]["surface_area"]
+    unemployment = response.json()[0]["unemployment"]
+    co2_emissions = response.json()[0]["co2_emissions"]
+    population_density = response.json()[0]["pop_density"]
+    internet_users = response.json()[0]["internet_users"]
+    refugees = response.json()[0]["refugees"]
     
-    country_panel = Panel.fit(f"[b green] Name: {name}\n Capital: {capital}\n Region: {region}[/]\n[b] GDP || GPD grwoth: {gdp} | {gdp_growth}\n Currency: {currency}\n Tourists: {tourists}", title = f"[b]{name}", title_align="left", border_style = "b white", box = box.SQUARE)
+    country_panel = Panel.fit(f"[b green]Name: {name}\nCapital: {capital}\nRegion: {region}[/]\n[b]GDP || GPD grwoth: {gdp} | {gdp_growth}\nCurrency: {currency}\nTourists: {tourists}\nPopulation: {population}\nPopulation density: {population_density}\nSurface Area: {surface_area}\nUnemployement: {unemployment}\nC02 emissions: {co2_emissions}\nInternet Users: {internet_users}\nRefugees: {refugees}", title = f"[b]{name}", title_align="left", border_style = "b white", box = box.SQUARE)
     print(country_panel)
+    
+    # print(response.text)
 else:
     print(Panel(f"Error: {response.status_code} {response.text}", border_style="bold red", box = box.SQUARE))
