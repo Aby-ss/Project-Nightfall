@@ -50,6 +50,7 @@ if response.status_code == 200:
         description = article['description']
         source = article['source']['name']
         
-        print(Panel(f"{description}", title=f"{title}", subtitle=f"{source}", title_align="left", subtitle_align="left", border_style="bold white", box = box.SQUARE))
+        news_panel = Panel(f"{description}", title=f"{title}", subtitle=f"{source}", title_align="left", subtitle_align="left", border_style="bold white", box = box.SQUARE)
+        print(news_panel)
 else:
     print(f"Error: {response.status_code}")
