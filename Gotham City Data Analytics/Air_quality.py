@@ -47,7 +47,7 @@ if response.status_code == requests.codes.ok:
     NO2_concentration = json_data['NO2']['concentration']
     NO2_aqi = json_data['NO2']['aqi']
 
-    air_quality = Panel(f"Overall Air Quality Index [aqi]: {overall_aqi}\n\n[b]C0 Concentration[/]: {CO_concentration}  [b]C0 AQI[/]: {CO_aqi}\n[b]PM10 Concentration[/]: {PM10_concentration}  [b]PM10 AQI[/]: {PM10_aqi}\n[b]SO2 Concentration[/]: {SO2_concentration}   [b]SO2 AQI[/]: {SO2_aqi}\n[b]PM25 Concentration[/]: {PM25_concentration}  [b]PM25 AQI[/]: {PM25_aqi}\n[b]O3 Concentration[/]: {O3_concentration}  [b]O3 AQI[/]: {O3_aqi}\n[b]NO2 Concentration[/]: {NO2_concentration}  [b]NO2 AQI[/]: {NO2_aqi}", title=f"Air Quality Index for [i]{city}[/]", title_align="left", border_style="bold white", box = box.SQUARE)
+    air_quality = Panel(f"Overall Air Quality Index [aqi]: {overall_aqi}\n\n[b]C0 Conc.[/]: {CO_concentration}  [b]C0 AQI[/]: {CO_aqi}\n[b]PM10 Conc.[/]: {PM10_concentration}  [b]PM10 AQI[/]: {PM10_aqi}\n[b]SO2 Conc.[/]: {SO2_concentration}   [b]SO2 AQI[/]: {SO2_aqi}\n[b]PM25 Conc.[/]: {PM25_concentration}  [b]PM25 AQI[/]: {PM25_aqi}\n[b]O3 Conc.[/]: {O3_concentration}  [b]O3 AQI[/]: {O3_aqi}\n[b]NO2 Conc.[/]: {NO2_concentration}  [b]NO2 AQI[/]: {NO2_aqi}", title=f"Air Quality Index for [i]{city}[/]", title_align="left", border_style="bold white", box = box.SQUARE)
     print(air_quality)
 else:
     print(Panel.fit(f"[b]Error: {response.status_code}: {response.text}", border_style="bold red", box = box.SQUARE))
