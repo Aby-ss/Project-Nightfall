@@ -48,7 +48,7 @@ layout["Left"].split_column(
 )
 
 layout["Others"].split_row(
-    Layout(name="Air Quality"),
+    Layout(name="Air Quality", ratio=2),
     Layout(name="Overall Country")
 )
 
@@ -87,11 +87,13 @@ def enviromental_factors():
 
 def air_Quality():
     import Air_quality as AQ
+    return AQ.air_quality
     
     
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 layout["Weather Forecast"].update(climate_analysis())
 layout["Environmental Factors"].update(enviromental_factors())
+layout["Air Quality"].update(air_Quality())
 
 print(layout)
