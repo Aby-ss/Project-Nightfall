@@ -25,7 +25,7 @@ from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.traceback import install
 install(show_locals=True)
 
-text = 'roman empire'
+text = 'Dubai'
 api_url = 'https://api.api-ninjas.com/v1/historicalevents?text={}'.format(text)
 response = requests.get(api_url, headers={'X-Api-Key': 'E9SmCxTQQtyVD79D96wfpg==7Z30WK1D8Do2AOcN'})
 if response.status_code == requests.codes.ok:
@@ -37,7 +37,7 @@ if response.status_code == requests.codes.ok:
         day = event['day']
         event_desc = event['event']
 
-
-        print(Panel(f"{event_desc}", title=f"{year} - {month} - {day}", title_align="left", border_style="bold white", box = box.SQUARE))
+        history_panel = Panel(f"{event_desc}", title=f"{year}-{month}-{day}", title_align="left", border_style="bold white", box = box.SQUARE)
+        print(history_panel)
 else:
     print(Panel.fit(f"[b]Error: {response.status_code}: {response.text}", border_style="bold red", box = box.SQUARE))
