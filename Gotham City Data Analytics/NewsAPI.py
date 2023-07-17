@@ -33,7 +33,7 @@ url = 'https://newsapi.org/v2/everything'
 params = {
     'q': 'Dubai',  # Replace 'city' with the desired city or region
     'apiKey': api_key,
-    'pageSize': 10  # Specify the number of articles you want to retrieve
+    'pageSize': 5  # Specify the number of articles you want to retrieve
 }
 
 # Send the request to the API
@@ -52,5 +52,6 @@ if response.status_code == 200:
         
         news_panel = Panel(f"{description}", title=f"{title}", subtitle=f"{source}", title_align="left", subtitle_align="left", border_style="bold white", box = box.SQUARE)
         print(news_panel)
+        print(" ")
 else:
     print(f"Error: {response.status_code}")
