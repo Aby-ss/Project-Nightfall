@@ -20,7 +20,7 @@ if response.status_code == requests.codes.ok:
     gdp_growth = response.json()[0]["gdp_growth"]
     capital = response.json()[0]["capital"]
     
-    info_panel = Panel(f"[b red] Name : {name}\n Capital : {capital}\n Region : {region}[/]\n[b] GDP || GPD grwoth : {gdp} | {gdp_growth}\n Currency : {currency}\n Tourists : {tourists}", title = f"[b] {name}", subtitle = "  ...  ", border_style = "b green")
+    country_panel = Panel(f"[b red] Name : {name}\n Capital : {capital}\n Region : {region}[/]\n[b] GDP || GPD grwoth : {gdp} | {gdp_growth}\n Currency : {currency}\n Tourists : {tourists}", title = f"[b] {name}", subtitle = "  ...  ", border_style = "b green")
     print(info_panel)
 else:
     print("Error:", response.status_code, response.text)
