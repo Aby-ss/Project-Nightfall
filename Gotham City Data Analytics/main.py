@@ -84,6 +84,10 @@ def climate_analysis():
 def enviromental_factors():
     import environ_factors as EV_factors
     return EV_factors.get_air_quality_data("London")
+
+def air_Quality():
+    import Air_quality as AQ
+    
     
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
