@@ -1,5 +1,6 @@
 import requests
 
+
 url = "https://api.tomorrow.io/v4/weather/forecast?location=new%20york&timesteps=1d&units=metric&apikey=oTQpnpQiblAW9o2yVziW3FmFl5U9dUlR"
 
 headers = {"accept": "application/json"}
